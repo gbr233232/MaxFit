@@ -25,28 +25,45 @@
 
         <form style="padding: 0 0 100px 0;">
             <div class="form-group">
-                <input type="text" class="form-control form-control-lg mt-5"id="usuario" placeholder="CPF">
+                <label for="nome" class="mt-5">Nome</label>
+                <input class="form-control form-control-md" type="text" id="nome" placeholder="Digite seu nome">
             </div>
 
             <div class="form-group">
-                <input type="text" class="form-control form-control-lg mt-4" id="usuario" placeholder="Nome Completo">
+                <label for="email" >E-mail</label>
+                <input class="form-control form-control-md" type="email" id="email" placeholder="Digite seu e-mail">
             </div>
 
             <div class="form-group">
-                <input type="text" class="form-control form-control-lg mt-4" id="usuario" placeholder="E-mail">
+                <label for="cpf" >CPF</label>
+                <input class="form-control form-control-md" type="number" id="cpf" placeholder="Digite seu CPF">
             </div>
 
             <div class="form-group">
-                <input type="text" class="form-control form-control-lg mt-4" id="usuario" placeholder="Sexo">
+                <label for="estados">Sexo</label>
+                <select class="form-control" id="estados">
+                    <option>...</option>
+                    <option>Masculino</option>
+                    <option>Feminino</option>
+                </select>
             </div>
 
             <div class="form-group">
-                <input type="text" class="form-control form-control-lg mt-4" id="usuario" placeholder="Data de Nascimento">
+                <label for="data_nascimento">Data de nascimento</label>
+                <input class="form-control form-control-md" type="date" id="data_nascimento" placeholder="Digite sua data de nascimento">
             </div>
 
             <div class="form-group">
-                <input type="text" class="form-control form-control-lg mt-4" id="usuario" placeholder="DDD + Celular (XX) XXXX-XXXX">
+                <label for="celular">Número de celular</label>
+                <br>
+                <input type="tel" id="telefone" name="telefone" placeholder="(12) 3456-7891" maxlength="10">
             </div>
+            <form>
+                <input type="text" id="campoDeEntrada">
+                
+            </form>
+            
+
 
             <p style="font-size: 12px;">Utilizamos seus dados pessoais para o cadastro em nossa plataforma, que nos permite lhe prestar nossos serviços. Para mais informações, acesse nosso Aviso de Privacidade. Caso não queira receber comunicações de marketing, o descadastramento pode ser realizado pelo Portal de Privacidade ou pelo link disponibilizado no rodapé dos e-mails da Smart Fit.
 
@@ -54,7 +71,7 @@
 
             
                 <div class="row">
-                    <a href="pagamento.html" class="btn btn-success ml-auto col-md-2 mt-4"style="font-size: 30px; color: white">Continuar</a>
+                    <a href="pagamento.html" class="btn btn-success ml-auto col-md-2 mt-4"style="font-size: 30px; color: white" id="botaoEnviar">Continuar</a>
                 </div>
             
         </form>
@@ -64,6 +81,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
 
 </body>
 </html>
