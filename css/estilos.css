@@ -55,20 +55,16 @@ i{
 
 .planos{
     
-    border-radius: 12px;
-    padding: 15px;
+    
+    background-color: #000;
     color: #fff;
-    background: #000;
     
     
 }
 
 .planos:hover{
     
-    border-radius: 12px;
-    padding: 15px;
-    
-    background: #373737;
+    background-color: #8e380e
     
     
 }
@@ -122,4 +118,6 @@ table{
 .pontasRedondas{
     border-radius: 30px;
 }
+
+
 
