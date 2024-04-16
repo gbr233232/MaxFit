@@ -23,7 +23,7 @@
         <a href="index.html"><img src="img/maxfit_logo_branca.png" width="200px"></a>
         <h3 class="mt-5">Vamos criar seu cadastro!</h3>
 
-        <form style="padding: 0 0 100px 0;">
+        <form style="padding: 0 0 100px 0;" >
             <div class="form-group">
                 <label for="nome" class="mt-5">Nome</label>
                 <input class="form-control form-control-md" type="text" id="nome" placeholder="Digite seu nome">
@@ -36,12 +36,12 @@
 
             <div class="form-group">
                 <label for="cpf" >CPF</label>
-                <input class="form-control form-control-md" type="number" id="cpf" placeholder="Digite seu CPF">
+                <input class="form-control form-control-md" type="tel" id="cpf" placeholder="Digite seu CPF" maxlength="11">
             </div>
 
             <div class="form-group">
                 <label for="estados">Sexo</label>
-                <select class="form-control" id="estados">
+                <select class="form-control" id="sexo">
                     <option>...</option>
                     <option>Masculino</option>
                     <option>Feminino</option>
@@ -56,7 +56,7 @@
             <div class="form-group">
                 <label for="celular">Número de celular</label>
                 <br>
-                <input type="tel" id="telefone" name="telefone" placeholder="(12) 3456-7891" maxlength="10">
+                <input type="tel" id="telefone" name="telefone" placeholder="(12) 3456-7891" maxlength="10" >
             </div>
 
             
@@ -66,7 +66,7 @@
 
             
                 <div class="row">
-                    <a href="pagamento.html" class="btn btn-success ml-auto col-md-2 mt-4"style="font-size: 30px; color: white" id="botaoEnviar">Continuar</a>
+                    <a class="btn btn-success ml-auto col-md-2 mt-4"style="font-size: 30px; color: white" id="botaoEnviar"  onclick="verificarPreenchimentoDadosPessoais()" >Continuar</a>
                 </div>
             
         </form>
