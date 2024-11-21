@@ -1,0 +1,153 @@
+
+<%- include('includes/head') %>
+<%- include('includes/navbar') %>
+  <style>
+    .plan-card {
+      border: 2px solid transparent;
+      border-radius: 8px;
+      padding: 20px;
+      transition: 0.3s ease;
+      cursor: pointer;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+    }
+    .plan-card:hover, .plan-card.active {
+      border-color: #ffc107;
+    }
+    .plan-black {
+      background-color: #333;
+      color: #fff;
+    }
+    .plan-black h2 {
+      color: #ffc107;
+    }
+    .plan-highlight {
+      font-weight: bold;
+    }
+    .btn-custom {
+      background-color: #ffc107;
+      color: #000;
+      border: none;
+    }
+    .btn-custom:hover {
+      background-color: #e0a800;
+    }
+    .extra-benefits {
+      display: none;
+      margin-top: 10px;
+      transition: max-height 0.3s ease-out;
+      overflow: hidden;
+    }
+    .extra-benefits.show {
+      display: block;
+      max-height: 200px;
+    }
+    .check-icon {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 20px;
+      color: #ffc107;
+      display: none;
+    }
+    .plan-card.active .check-icon {
+      display: block;
+    }
+    .show-more-btn {
+      margin-top: auto;
+    }
+  </style>
+  <div class="container py-5">
+    <h1 class="text-center mb-4">Escolha o plano mais vantajoso para você:</h1>
+    <form>
+      <div class="row gy-4">
+        <!-- Plano Black -->
+        <div class="col-md-4">
+          <div class="plan-card plan-black h-100 text-center" onclick="selectPlan(this)">
+            <input type="radio" name="plan" class="d-none" value="black">
+            <i class="fas fa-check-circle check-icon"></i>
+            <h2>Plano Black</h2>
+            <p>Treine em qualquer academia da Smart Fit, seja no Brasil ou na América Latina. São +1.500 unidades em 15 países!</p>
+            <p class="plan-highlight">R$ 0,00 no 1º mês, depois R$ 139,90/mês</p>
+            <p>12 meses de fidelidade<br>Adesão R$ 29,90</p>
+
+            <div class="extra-benefits black-benefits">
+              <p>- Acesso ilimitado<br>- Área VIP<br>- Aulas coletivas exclusivas</p>
+            </div>
+          </div>
+        </div>
+        <!-- Plano Fit -->
+        <div class="col-md-4">
+          <div class="plan-card bg-light h-100 text-center" onclick="selectPlan(this)">
+            <input type="radio" name="plan" class="d-none" value="fit">
+            <i class="fas fa-check-circle check-icon"></i>
+            <h2>Plano Fit</h2>
+            <p>Nosso plano mais econômico para você se exercitar quando e quanto quiser na academia que escolher!</p>
+            <p class="plan-highlight">R$ 0,00 no 1º mês, depois R$ 129,90/mês</p>
+            <p>12 meses de fidelidade<br>Adesão R$ 39,90</p>
+
+            <div class="extra-benefits fit-benefits">
+              <p>- Acesso em horário comercial<br>- Espaço funcional<br>- Treinos personalizados</p>
+            </div>
+          </div>
+        </div>
+        <!-- Plano Smart -->
+        <div class="col-md-4">
+          <div class="plan-card bg-light h-100 text-center" onclick="selectPlan(this)">
+            <input type="radio" name="plan" class="d-none" value="smart">
+            <i class="fas fa-check-circle check-icon"></i>
+            <h2>Plano Smart</h2>
+            <p>Nosso plano mensal para você que não quer se comprometer, mas quer treinar em uma academia de alto padrão!</p>
+            <p class="plan-highlight">R$ 149,90/mês</p>
+            <p>Sem fidelidade<br>Adesão zero</p>
+            <div class="extra-benefits smart-benefits">
+              <p>- Sem compromisso<br>- Academia premium<br>- Equipamentos de última geração</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-4">
+          <form action="/cadastro" method="post">
+            <div class="col-md-4">
+              <div class="plan-card bg-light h-100 text-center" onclick="selectPlan(this)">
+                <input type="radio" name="plan" class="d-none" value="smart">
+                <i class="fas fa-check-circle check-icon"></i>
+                <h2>Plano Smart</h2>
+                <p>Nosso plano mensal para você que não quer se comprometer, mas quer treinar em uma academia de alto padrão!</p>
+                <p class="plan-highlight">R$ 149,90/mês</p>
+                <p>Sem fidelidade<br>Adesão zero</p>
+                <div class="extra-benefits smart-benefits">
+                  <p>- Sem compromisso<br>- Academia premium<br>- Equipamentos de última geração</p>
+                </div>
+              </div>
+            </div>
+
+            <button type="submit" id="continue-btn" class="btn btn-custom"  disabled >Continuar para o cadastro</button>
+          </form>
+         
+
+      </div>
+
+    </form>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Função para selecionar um plano
+    function selectPlan(card) {
+      // Remover a seleção de todos os outros cards
+      document.querySelectorAll('.plan-card').forEach(card => card.classList.remove('active'));
+      card.classList.add('active');
+      card.querySelector('input').checked = true;
+      
+      // Habilitar o botão 'Continuar para o cadastro' quando um plano for selecionado
+      document.getElementById('continue-btn').disabled = false;
+    }
+
+    
+  </script>
+
