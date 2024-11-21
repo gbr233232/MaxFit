@@ -49,7 +49,7 @@ app.set('views', path.resolve(__dirname, 'src', 'views'));
 app.set('view engine', 'ejs');
 
 
-
+app.use('/frontend', express.static(path.join(__dirname, 'frontend')));
 app.use(routes)
 app.on('pronto', () =>{
     app.listen(2424, () => {
