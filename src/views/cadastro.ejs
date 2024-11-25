@@ -1,1 +1,96 @@
-<h1>cadastro</h1>
+<%- include('includes/head') %>
+<nav class="navbar navbar-expand-lg ">
+
+    <div class="container-fluid">
+        
+            <img src="../../../frontend/assets/img/maxfit_logo_branca.png" width="180" alt="Logo">
+
+
+        <div >
+            <ul class="nav ms-auto"> <!-- Adicionada a classe ms-auto -->
+
+                
+                <li class="nav-item">
+                    <a class="btn btn-primary" href="/planos">Voltar</a>
+                </li>
+
+
+            </ul>
+        </div>
+    </div>
+
+</nav>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-2"></div>
+
+        <div class="col-lg-8 my-3">
+            
+            <h1 class="text-center">Cadastro</h1>
+            <p class="text-center lead">Preencha os campos com seus dados.</p>
+            <h1 class="text-center">Seu plano é <%= plano%></h1> 
+
+            <%- include('includes/messages') %>
+            
+
+            <div class="col-lg">
+
+
+
+                <form action="/cadastro/registrar" method="POST" >
+
+                    <div class="mb-3">
+                        <label class="form-label">E-mail</label>
+                        <input  type="email" class="form-control" name="email">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Senha</label>
+                        <input  type="password" class="form-control" name="password">
+                    </div>
+
+                    <div class="mb-3">
+                      <label class="form-label">Nome</label>
+                      <input  type="text" class="form-control" name="nome">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Sobrenome</label>
+                        <input  type="text" class="form-control" name="sobrenome">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">CPF</label>
+                        <input  type="number" class="form-control" name="cpf">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Data de nascimento</label>
+                        <input  type="date" class="form-control" name="dataNasc">
+                    </div>
+
+
+                    <div class="mb-3">
+                        <label class="form-label">Telefone</label>
+                        <input  type="tel" class="form-control" name="telefone">
+                    </div>
+
+
+                    <button type="submit" class="btn btn-primary">Salvar</button>
+                </form>
+            </div>
+
+
+            <div class="responsive-table">
+
+            </div>
+        </div>
+
+        <div class="col-lg-2"></div>
+    </div>
+</div>
+
+
+<%- include('includes/footer') %>

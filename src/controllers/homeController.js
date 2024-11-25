@@ -1,5 +1,5 @@
 exports.index = async (req, res) =>{
-    res.render('index');
+    res.render('index',{req});
 }
 
 exports.login = async (req, res) =>{
@@ -7,11 +7,6 @@ exports.login = async (req, res) =>{
 }
 
 exports.planos = async (req, res) =>{
-    res.render('planos')
+    res.render('planos',{req})
 }
 
-exports.cadastro = async (req, res) =>{
-
-    res.render('cadastro')
-    
-}

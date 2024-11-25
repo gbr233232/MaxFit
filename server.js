@@ -23,6 +23,10 @@ async function connectDB() {
 
 connectDB();
 
+
+//middlewares
+const { middlewareGlobal } = require('./src/middlewares/middlewares')
+
 //middleware de parsing
 app.use(express.urlencoded({extended:true}));
 app.use(express.static(path.join(__dirname, 'public')));
@@ -38,6 +42,9 @@ const sessionOptions = session({
         httpOnly: true
     }
 });
+app.use(sessionOptions);
+app.use(flash());
+app.use(middlewareGlobal);
 
 //middlewares
 const routes = require('./routes')
