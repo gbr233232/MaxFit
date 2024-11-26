@@ -7,6 +7,11 @@ exports.exibirPlanoCadastro = async (req,res) => {
     
 };
 
+exports.index = async function (req,res) {
+    res.render('areaCliente')
+}
+
+
 exports.registrarCadastro = async(req,res) => {
 
     try{
@@ -20,7 +25,8 @@ exports.registrarCadastro = async(req,res) => {
         }
 
         req.flash('success', 'Cadastrado com sucesso');
-        req.session.save(() => res.redirect('/login/index'));
+        req.session.user = cadastro.user;
+        req.session.save(() => res.redirect('/cadastro/index'));
         return;
     }catch(e){
         console.log(e)
@@ -46,12 +52,19 @@ exports.login = async function(req, res) {
 
 
         req.flash('success', 'Você entrou no sistema.');
-        
-        req.session.save(() => res.redirect('/login/index'));
+        req.session.user = cadastro.user;
+        req.session.save(() => res.redirect('/cadastro/index'));
     } catch (e) {
         console.log(e);
         return res.render('404');
     }
     
+}
+
+
+//LOGOUT
+exports.logout = async function(req, res) {
+    req.session.destroy();
+    res.redirect('/');
 }
 

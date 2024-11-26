@@ -1,96 +1,72 @@
 <%- include('includes/head') %>
-<nav class="navbar navbar-expand-lg ">
-
+<nav class="navbar navbar-expand-lg navbar-dark ">
     <div class="container-fluid">
-        
-            <img src="../../../frontend/assets/img/maxfit_logo_branca.png" width="180" alt="Logo">
+        <img src="../../../frontend/assets/img/maxfit_logo_branca.png" width="180" alt="Logo" class="navbar-brand">
 
-
-        <div >
-            <ul class="nav ms-auto"> <!-- Adicionada a classe ms-auto -->
-
-                
+        <div>
+            <ul class="nav ms-auto">
                 <li class="nav-item">
                     <a class="btn btn-primary" href="/planos">Voltar</a>
                 </li>
-
-
             </ul>
         </div>
     </div>
-
 </nav>
 
-
 <div class="container">
-    <div class="row">
-        <div class="col-lg-2"></div>
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <h1 class="text-center  display-5 fw-bold custom-title">Cadastro</h1>
+            <p class="text-center text-muted fs-5">Preencha os campos com seus dados para continuar.</p>
 
-        <div class="col-lg-8 my-3">
-            
-            <h1 class="text-center">Cadastro</h1>
-            <p class="text-center lead">Preencha os campos com seus dados.</p>
-            <h1 class="text-center">Seu plano é <%= plano%></h1> 
 
             <%- include('includes/messages') %>
-            
 
-            <div class="col-lg">
+            <form action="/cadastro/registrar" method="POST" class="p-4 shadow rounded bg-light">
+                <div class="mb-3">
+                    <label for="email" class="form-label">E-mail</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Digite seu e-mail" required>
+                </div>
 
+                <div class="mb-3">
+                    <label for="password" class="form-label">Senha</label>
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Digite sua senha" required>
+                </div>
 
-
-                <form action="/cadastro/registrar" method="POST" >
-
-                    <div class="mb-3">
-                        <label class="form-label">E-mail</label>
-                        <input  type="email" class="form-control" name="email">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="nome" class="form-label">Nome</label>
+                        <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite seu nome" required>
                     </div>
 
-                    <div class="mb-3">
-                        <label class="form-label">Senha</label>
-                        <input  type="password" class="form-control" name="password">
+                    <div class="col-md-6 mb-3">
+                        <label for="sobrenome" class="form-label">Sobrenome</label>
+                        <input type="text" class="form-control" id="sobrenome" name="sobrenome" placeholder="Digite seu sobrenome" required>
                     </div>
+                </div>
 
-                    <div class="mb-3">
-                      <label class="form-label">Nome</label>
-                      <input  type="text" class="form-control" name="nome">
-                    </div>
+                <div class="mb-3">
+                    <label for="cpf" class="form-label">CPF</label>
+                    <input type="text" class="form-control" id="cpf" name="cpf" placeholder="Digite seu CPF" required>
+                </div>
 
-                    <div class="mb-3">
-                        <label class="form-label">Sobrenome</label>
-                        <input  type="text" class="form-control" name="sobrenome">
-                    </div>
+                <div class="mb-3">
+                    <label for="dataNasc" class="form-label">Data de nascimento</label>
+                    <input type="date" class="form-control" id="dataNasc" name="dataNasc" required>
+                </div>
 
-                    <div class="mb-3">
-                        <label class="form-label">CPF</label>
-                        <input  type="number" class="form-control" name="cpf">
-                    </div>
+                <div class="mb-3">
+                    <label for="telefone" class="form-label">Telefone</label>
+                    <input type="tel" class="form-control" id="telefone" name="telefone" placeholder="Digite seu telefone" required>
+                </div>
 
-                    <div class="mb-3">
-                        <label class="form-label">Data de nascimento</label>
-                        <input  type="date" class="form-control" name="dataNasc">
-                    </div>
-
-
-                    <div class="mb-3">
-                        <label class="form-label">Telefone</label>
-                        <input  type="tel" class="form-control" name="telefone">
-                    </div>
-
-
-                    <button type="submit" class="btn btn-primary">Salvar</button>
-                </form>
-            </div>
-
-
-            <div class="responsive-table">
-
-            </div>
+                <div class=" col-lg-2 justify-content-center">
+                    <button type="submit" class="btn btn-primary w-100 py-2">Salvar</button>
+                </div>
+                
+            </form>
         </div>
-
-        <div class="col-lg-2"></div>
     </div>
 </div>
-
 
 <%- include('includes/footer') %>

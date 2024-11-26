@@ -1,9 +1,16 @@
 <nav class="navbar navbar-expand-lg ">
 
     <div class="container-fluid">
+        <% if(!user) { %>
         <a class="navbar-brand" href="/">
             <img src="../../../frontend/assets/img/maxfit_logo_branca.png" width="180" alt="Logo">
         </a>
+        <% } %>
+            
+        <% if(user) {%>
+            <img src="../../../frontend/assets/img/maxfit_logo_branca.png" width="180" alt="Logo">
+
+        <%}%>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -11,7 +18,7 @@
         <div class="collapse navbar-collapse" id="navbarText">
             <ul class="nav ms-auto"> <!-- Adicionada a classe ms-auto -->
 
-                
+                <% if(!user) { %>
                 <li class="nav-item">
                     <a class="nav-link link-dark" href="#">Contato</a>
                 </li>
@@ -23,7 +30,12 @@
                 <li class="nav-item">
                     <a class="nav-link link-dark" href="/login" >Área do Aluno</a>
                 </li>
-
+                <% } %>
+                <% if(user) {%>
+                    <li class="nav-item">
+                      <a class="btn btn-primary" href="/cadastro/logout">Sair</a>
+                    </li>
+                <%}%>
             </ul>
         </div>
     </div>

@@ -51,7 +51,7 @@ i{
 }
 
 .loc:hover{
-    color: #e9631e;
+    color: #ff8a00;
 }
 
 .planos{
@@ -84,7 +84,7 @@ font-family:sans-serif;
 
 .preco{
     font-family:Trebuchet MS;
-    color: #e9631e;
+    color: #ff8a00;
 }
 
 footer{
@@ -121,7 +121,7 @@ table{
 }
 
 .fonte{
-    color: #e9631e;
+    color: #ff8a00;
 }
 
 
@@ -139,7 +139,7 @@ table{
 }
 
 .plan-card:hover, .plan-card.active {
-  border-color: #ffc107;
+  border-color: #ff8a00;
 }
 
 .plan-black {
@@ -148,7 +148,7 @@ table{
 }
 
 .plan-black h2 {
-  color: #ffc107;
+  color: #ff8a00;
 }
 
 .plan-highlight {
@@ -156,13 +156,13 @@ table{
 }
 
 .btn-custom {
-  background-color: #ffc107;
-  color: #000;
+  background-color: #ff8a00;
+  color: #fff;
   border: none;
 }
 
 .btn-custom:hover {
-  background-color: #e0a800;
+  background-color: #a73f23;
 }
 
 .extra-benefits {
@@ -182,7 +182,7 @@ table{
   top: 10px;
   right: 10px;
   font-size: 20px;
-  color: #ffc107;
+  color: #f8712e;
   display: none;
 }
 
@@ -194,5 +194,12 @@ table{
   margin-top: auto;
 }
 
+.custom-title {
+  font-size: 3rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  color: #ff7f08;
 
-
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}

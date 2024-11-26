@@ -1,8 +1,10 @@
 <%- include('includes/head') %>
+<%- include('includes/navbar') %>
+<%- include('includes/messages') %>
 
 
 <div class="container"><!--CONTAINER CONTEUDO-->
-    
+
     
     
     <div class="row">
@@ -127,34 +129,36 @@
         <h2>FICHA DE TREINO</h2>
     </div>
     
-
-    <div id="carousel-control" class="carousel slide mt-3" data-ride="carousel">
-
-        <ol class="carousel-indicators">
-            <li class="active" data-target="#carousel-control" data-slide-to="0"></li>
-            <li data-target="#carousel-control" data-slide-to="1"></li>
-        </ol>
-
-        <div class="carousel-inner">
-
-            <div class="carousel-item active">
-                <div class="col-md-12"><img src="img/TREINO A.png" class="img-fluid" style="border-bottom: 20px;"></div>
-            </div>
-
-            <div class="carousel-item ">
-                <div class="col-md-12"><img src="img/TREINO B.png" class="img-fluid" style="border-bottom: 20px;"></div>
-            </div>
-            
+    <div id="carousel-control" class="carousel slide mt-3" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carousel-control" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carousel-control" data-bs-slide-to="1" aria-label="Slide 2"></button>
         </div>
-
-        <a href="#carousel-control" class="carousel-control-prev" data-slide="prev">
-            <span class="carousel-control-prev-icon"></span>
-        </a>
-        <a href="#carousel-control" class="carousel-control-next" data-slide="next">
-            <span class="carousel-control-next-icon"></span>
-        </a>
-
+    
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="col-md-12">
+                    <img src="../../frontend/assets/img/TREINO A.png" class="img-fluid" style="border-bottom: 20px;" alt="Treino A">
+                </div>
+            </div>
+    
+            <div class="carousel-item">
+                <div class="col-md-12">
+                    <img src="../../frontend/assets/img/TREINO B.png" class="img-fluid" style="border-bottom: 20px;" alt="Treino B">
+                </div>
+            </div>
+        </div>
+    
+        <button class="carousel-control-prev" type="button" data-bs-target="#carousel-control" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carousel-control" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Próximo</span>
+        </button>
     </div>
+    
 
 
 </div><!--CONTAINER CONTEUDO-->
