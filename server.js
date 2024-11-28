@@ -7,6 +7,7 @@ const session = require('express-session');
 const MongoStore = require('connect-mongo');
 const flash = require('connect-flash');
 const app = express();
+const port = process.env.PORT||2424;
 
 
 //conexão mongoDB
@@ -58,8 +59,7 @@ app.set('view engine', 'ejs');
 
 app.use('/frontend', express.static(path.join(__dirname, 'frontend')));
 app.use(routes)
-app.on('pronto', () =>{
-    app.listen(2424, () => {
-        console.log('Servidor executando porta 3333')
-    })
-})
+app.listen(port, () => {
+    console.log(`Servidor executando na porta ${port}`);
+
+});
