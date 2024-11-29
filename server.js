@@ -14,7 +14,7 @@ const port = process.env.PORT||2424;
 
 async function connectDB() {
     try{
-        await mongoose.connect(process.env.CONNECTIONSTRING);
+        await mongoose.connect(process.env.MONGO_URI);
         console.log('Conectado á base de dados')
         app.emit('pronto');
     }catch(err) {
@@ -35,7 +35,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 //sessões e flash
 const sessionOptions = session({
     secret: process.env.SESSION_SECRET,
-    store: MongoStore.create({ mongoUrl: process.env.CONNECTIONSTRING }),
+    store: MongoStore.create({ mongoUrl: process.env.MONGO_URI }),
     resave: false,
     saveUninitialized: false,
     cookie: {
