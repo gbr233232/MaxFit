@@ -1,5 +1,7 @@
 require('dotenv').config();
 
+
+
 const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
@@ -30,7 +32,7 @@ const { middlewareGlobal } = require('./src/middlewares/middlewares')
 
 //middleware de parsing
 app.use(express.urlencoded({extended:true}));
-app.use(express.static(path.join(__dirname, 'public')));
+
 
 //sessões e flash
 const sessionOptions = session({
@@ -43,6 +45,7 @@ const sessionOptions = session({
         httpOnly: true
     }
 });
+
 app.use(sessionOptions);
 app.use(flash());
 app.use(middlewareGlobal);

@@ -85,10 +85,6 @@ class  Cadastro {
             this.errors.push('Sobrenome é obrigatório.');
         }
     
-        if (!this.body.email || !validator.isEmail(this.body.email)) {
-            this.errors.push('E-mail inválido.');
-        }
-    
         if (!this.body.cpf || typeof this.body.cpf !== 'string') {
             this.errors.push('CPF é obrigatório.');
         }

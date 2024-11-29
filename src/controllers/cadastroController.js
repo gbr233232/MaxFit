@@ -11,7 +11,7 @@ exports.index = async function (req,res) {
     res.render('areaCliente')
 }
 
-
+//REGISTRAR
 exports.registrarCadastro = async(req,res) => {
 
     try{
@@ -34,6 +34,7 @@ exports.registrarCadastro = async(req,res) => {
     }
 }
 
+//LOGIN
 exports.login = async function(req, res) {
     try{
         const cadastro = new Cadastro(req.body);
